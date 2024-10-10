@@ -1,24 +1,20 @@
-local code_atlas = {
-    object_type = "Atlas",
-    key = "benthicbloom",
-    path = "j_benthicbloom.png",
-    px = 71,
-    py = 95,
-}
 return {
     object_type = "Joker",
-    name = "Benthic Bloom",
+    name = "ror-Benthic Bloom",
     key = "benthicbloom",
     config = { extra = { replication = 1 } },
     pos = { x = 0, y = 0 },
-    rarity = 'cry_exotic',
-    cost = 50,
+    rarity = 4,
+    cost = 20,
     blueprint_compat = true,
     eternal_compat = false,
-    atlas = "benthicbloom",
+    atlas = "atlasbenthicbloom",
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.replication } }
     end,
+    add_to_deck = function(self, card, from_debuff)
+		card:set_edition("e_roritem", true, nil, true)
+	end,
     calculate = function(self, card, context)
         if
             context.end_of_round
