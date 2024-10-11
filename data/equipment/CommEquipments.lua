@@ -12,7 +12,7 @@ local define = {
 local recycle_machine = {
     atalas = {
         object_type = "Atlas",
-        key = "recycle_machine",
+        key = "atlasrecycle_machine",
         path = "e_recycle_machine.png",
         px = 64,
         py = 64,
@@ -25,7 +25,7 @@ local recycle_machine = {
         pos = { x = 0, y = 0 },
         config = { now_state = 0, cooldown = 3, },
         cost = 4,
-        atlas = "recycle_machine",
+        atlas = "atlasrecycle_machine",
         order = 1,
         can_use = function(self, card)
             return #G.jokers.highlighted == 1
@@ -66,6 +66,7 @@ local recycle_machine = {
     }
 }
 return {
+    name = "普通装备",
     items = {
         define,
         recycle_machine

@@ -15,10 +15,20 @@ return {
             e_ror_roritem = {
                 name = "物品",
                 text = {
-                    "自带复片，固定",
-                    "不可售出"
+                    "{C:dark_edition,T:negative}负片{}",
+                    "{C:attention}固定{}",
+                    "{C:red}不可出售{}"
                 }
             }
+        }
+    },
+    misc = {
+        dictionary = {
+            b_equipment_cards = "装备牌",
+        },
+        labels = {
+            ror_roritem = "物品",
+            ror_vanity = "虚空",
         }
     }
 }

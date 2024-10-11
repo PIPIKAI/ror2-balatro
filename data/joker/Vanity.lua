@@ -21,7 +21,10 @@ local benthicbloom = {
             return { vars = { center.ability.extra.replication } }
         end,
         add_to_deck = function(self, card, from_debuff)
-            card:set_edition("e_roritem", true, nil, true)
+            card:set_edition({ ror_roritem = true }, true)
+        end,
+        can_sell_card = function(card)
+            return false
         end,
         calculate = function(self, card, context)
             local function upgrade_one_card()
@@ -92,7 +95,7 @@ local benthicbloom = {
 }
 
 return {
-    name = "虚空装备",
+    name = "虚空小丑牌",
     items = {
         benthicbloom
     }
