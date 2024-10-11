@@ -11,4 +11,14 @@ return {
     loc_vars = function(self, info_queue)
         return {  }
     end,
+    on_apply = function(card)
+        card.pinned = true
+        G.jokers.config.card_limit= G.jokers.config.card_limit + 1
+    end,
+    on_remove = function(card)
+        G.jokers.config.card_limit= G.jokers.config.card_limit - 1
+    end,
+    can_sell_card = function(card)
+        return false
+    end
 }
