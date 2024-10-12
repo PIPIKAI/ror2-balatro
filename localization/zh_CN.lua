@@ -25,6 +25,7 @@ return {
     misc = {
         dictionary = {
             b_equipment_cards = "装备牌",
+            ror_vanity = "虚空",
         },
         labels = {
             ror_roritem = "物品",
