@@ -17,6 +17,7 @@ local recycle_machine = {
         px = 64,
         py = 64,
     },
+    -- 回收机
     obj = {
         object_type = "Consumable",
         set = "Equipment",

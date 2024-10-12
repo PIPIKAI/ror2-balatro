@@ -42,7 +42,7 @@ return {
             end
         end
 
-        -- copy from cryptid
+        -- copy from cryptid 创建虚空的badge
         local smcmb = SMODS.create_mod_badges
         function SMODS.create_mod_badges(obj, badges)
             smcmb(obj, badges)
@@ -61,12 +61,12 @@ return {
                     local scale_fac = calced_text_width > max_text_width and max_text_width / calced_text_width or 1
                     return scale_fac
                 end
-                local credits_text = {localize("ror_vanity")}
+                local credits_text = { localize("ror_vanity") }
                 local scale_fac = {}
 
-                    for i = 1, #credits_text do
-                        scale_fac[i] = calc_scale_fac(credits_text[i])
-                    end
+                for i = 1, #credits_text do
+                    scale_fac[i] = calc_scale_fac(credits_text[i])
+                end
 
                 local ct = {}
                 for i = 1, #credits_text do

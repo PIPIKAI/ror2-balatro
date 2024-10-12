@@ -33,7 +33,7 @@ local function perase_lua_file(dir, files)
         return
     end
     if not current_object.name then
-        Log("Warning",": " .. file_path .. " has no name")
+        Log("Warning", ": " .. file_path .. " has no name")
     end
 
     if current_object.init then
@@ -41,7 +41,7 @@ local function perase_lua_file(dir, files)
     end
 
     if not current_object.items then
-        return 
+        return
     end
     for _, item in ipairs(current_object.items) do
         for key, value in pairs(item) do
@@ -68,7 +68,7 @@ end
 
 local function load_obj_from_dir(dir)
     for _, files in ipairs(NFS.getDirectoryItems(mod_path .. dir)) do
-        if files:sub(-4) == ".lua" and files~= "init.lua" then
+        if files:sub(-4) == ".lua" and files ~= "init.lua" then
             perase_lua_file(dir, files)
         else
             load_obj_from_dir(dir .. '/' .. files)
@@ -82,7 +82,7 @@ load_obj_from_dir("data")
 Log("info", "obj_buffer:\n" .. inspect(ROR.obj_buffer))
 Log("info", "Parese files done!")
 
-local load_order ={
+local load_order = {
     'Shader',
     'Atlas',
     'Consumable',
@@ -91,7 +91,7 @@ local load_order ={
 }
 for key, name in ipairs(load_order) do
     local objects = ROR.obj_buffer[load_order[key]]
-    Log("info", "inspect "..name..":\n" .. inspect(objects))
+    Log("info", "inspect " .. name .. ":\n" .. inspect(objects))
 
     for i = 1, #objects do
         if objects[i].post_process and type(objects[i].post_process) == "function" then
