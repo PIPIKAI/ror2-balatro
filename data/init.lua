@@ -82,15 +82,15 @@ load_obj_from_dir("data")
 Log("info", "obj_buffer:\n" .. inspect(ROR.obj_buffer))
 Log("info", "Parese files done!")
 
-local obj_order ={
+local load_order ={
     'Shader',
     'Atlas',
     'Consumable',
     'Joker',
     'Edition',
 }
-for key, name in ipairs(obj_order) do
-    local objects = ROR.obj_buffer[obj_order[key]]
+for key, name in ipairs(load_order) do
+    local objects = ROR.obj_buffer[load_order[key]]
     Log("info", "inspect "..name..":\n" .. inspect(objects))
 
     for i = 1, #objects do
