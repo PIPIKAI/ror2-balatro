@@ -20,10 +20,13 @@ local roritem = {
         end,
         on_apply = function(card)
             card.pinned = true
-            G.jokers.config.card_limit = G.jokers.config.card_limit + 1
+            -- card:set_edition({
+			-- 	negative = true,
+			-- })
+            -- G.jokers.config.card_limit = G.jokers.config.card_limit + 1
         end,
         on_remove = function(card)
-            G.jokers.config.card_limit = G.jokers.config.card_limit - 1
+            -- G.jokers.config.card_limit = G.jokers.config.card_limit - 1
         end
     }
 }
@@ -61,7 +64,7 @@ return {
                     local scale_fac = calced_text_width > max_text_width and max_text_width / calced_text_width or 1
                     return scale_fac
                 end
-                local credits_text = { localize("ror_vanity") }
+                local credits_text = { localize("ror_vanity") ,"哈哈哈哈哈"}
                 local scale_fac = {}
 
                 for i = 1, #credits_text do
@@ -84,7 +87,7 @@ return {
                             n = G.UIT.R,
                             config = {
                                 align = "cm",
-                                colour = G.C.RED,
+                                colour = HEX("8b008b"),
                                 r = 0.1,
                                 minw = 2,
                                 minh = 0.36,
