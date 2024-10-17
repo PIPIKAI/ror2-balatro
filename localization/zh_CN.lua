@@ -19,6 +19,18 @@ return {
                     "{C:attention}固定{}",
                     "{C:red}不可出售{}"
                 }
+            },
+            e_ror_holofoil = {
+                name = "彩绸",
+                text = {
+                    "未知",
+                }
+            },
+            e_ror_foilholo = {
+                name = "泊闪",
+                text = {
+                    "未知",
+                }
             }
         }
     },
@@ -30,6 +42,8 @@ return {
         labels = {
             ror_roritem = "物品",
             ror_vanity = "虚空",
+            ror_holofoil = "彩绸",
+            ror_foilholo = "泊闪",
         }
     }
 }

@@ -31,10 +31,80 @@ local roritem = {
     }
 }
 
+
+local holofoil = {
+    shader = {
+        object_type = "Shader",
+        key = "holofoil",
+        path = "holofoil.fs",
+    },
+    obj = {
+        object_type = "Edition",
+        in_shop = false,
+        key = "holofoil",
+        weight = 0,
+        shader = 'holofoil',
+        extra_cost = 0,
+        vanity = true,
+        config = {},
+        disable_base_shader = true,
+        disable_shadow = true,
+        loc_vars = function(self, info_queue)
+            return {}
+        end,
+        on_apply = function(card)
+            -- card.pinned = true
+            -- card:set_edition({
+			-- 	negative = true,
+			-- })
+            -- G.jokers.config.card_limit = G.jokers.config.card_limit + 1
+        end,
+        on_remove = function(card)
+            -- G.jokers.config.card_limit = G.jokers.config.card_limit - 1
+        end
+    }
+}
+
+local foilholo = {
+    shader = {
+        object_type = "Shader",
+        key = "foilholo",
+        path = "foilholo.fs",
+    },
+    obj = {
+        object_type = "Edition",
+        in_shop = false,
+        key = "foilholo",
+        weight = 0,
+        shader = 'foilholo',
+        extra_cost = 0,
+        vanity = true,
+        config = {},
+        disable_base_shader = true,
+        disable_shadow = true,
+        loc_vars = function(self, info_queue)
+            return {}
+        end,
+        on_apply = function(card)
+            -- card.pinned = true
+            -- card:set_edition({
+			-- 	negative = true,
+			-- })
+            -- G.jokers.config.card_limit = G.jokers.config.card_limit + 1
+        end,
+        on_remove = function(card)
+            -- G.jokers.config.card_limit = G.jokers.config.card_limit - 1
+        end
+    }
+}
+
+
 return {
     name = "增强类型",
     items = {
-        roritem
+        roritem,
+        holofoil,
+        foilholo
     },
     init = function()
         local ccs = Card.can_sell_card
